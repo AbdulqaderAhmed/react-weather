@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        sunny: "url('./src/assets/image/sunny.jpg')",
-        rainy: "url('./src/assets/image/cloud2.jpg')",
-        partial: "url('./src/assets/image/partial.jpg')",
-        cloudy: "url('./src/assets/image/rain2.jpg')",
+        sunny: "url('./src/image/sunny.jpg')",
+        rainy: "url('./src/image/cloud2.jpg')",
+        partial: "url('./src/image/partial.jpg')",
+        cloudy: "url('./src/image/rain2.jpg')",
       },
     },
   },
