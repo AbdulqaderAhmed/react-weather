@@ -10,8 +10,8 @@ export default function App() {
 
   const fetchData = async (e) => {
     if (e.key === "Enter") {
-      const res = await http(
-        `http://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${name}`
+      const res = await http(`/current.json?key=${APIKEY}&q=${name}`).catch(
+        (error) => console.log(error)
       );
       setData(res.data);
       setBg(res.data.current.temp_c);
