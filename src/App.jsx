@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./assets/css/app.css";
-import { http } from "./api/http";
 import { APIKEY } from "./api/apiKey";
+import axios from "axios";
 
 export default function App() {
   const [data, setData] = useState("London" | {});
@@ -10,8 +10,7 @@ export default function App() {
 
   const fetchData = async (e) => {
     if (e.key === "Enter") {
-      const res = await http(`/current.json?key=${APIKEY}&q=${name}`);
-      console.log(res.data.current);
+      const res = await axios.get(`http://api.weatherapi.com/v1/current.json?key=511c89c2d1e743eb8a5171227220211&q=${name}`);
       setData(res.data);
       setBg(res.data.current.temp_c);
     }
@@ -20,8 +19,6 @@ export default function App() {
   useEffect(() => {
     fetchData();
   }, [2]);
-
-  console.log(bg);
 
   return (
     <div
