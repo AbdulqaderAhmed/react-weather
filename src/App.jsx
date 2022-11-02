@@ -10,7 +10,9 @@ export default function App() {
 
   const fetchData = async (e) => {
     if (e.key === "Enter") {
-      const res = await axios.get(`http://api.weatherapi.com/v1/current.json?key=511c89c2d1e743eb8a5171227220211&q=${name}`);
+      const res = await axios.get(
+        `http://api.weatherapi.com/v1/current.json?key=511c89c2d1e743eb8a5171227220211&q=${name}`
+      );
       setData(res.data);
       setBg(res.data.current.temp_c);
     }
@@ -18,7 +20,7 @@ export default function App() {
 
   useEffect(() => {
     fetchData();
-  }, [2]);
+  }, []);
 
   return (
     <div
